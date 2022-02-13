@@ -5,14 +5,14 @@ import logicon from "./asset/logicon.svg";
 import triplebar from "./asset/triplebar.svg";
 import { useState } from "react";
 
-const navBar = () => {
+const NavBar = () => {
     const [ordernum] = useState(0);
 
     return (
-        <HStack justifyContent="space-between" px={{base:"2rem", md:"3rem", lg:"4rem"}} fontFamily="consolas">
+        <HStack justifyContent="space-between" px={{base:"1rem", md:"2rem", lg:"5rem"}} fontFamily="monospace">
             <Box><Image src={mainlogo} alt="main logo" width="15rem"/></Box>
             <Box><Image src={triplebar} alt="triple bar" display={{ base: "block", md:"block", lg:"none"}} boxSize="1.7rem"/></Box>
-            <HStack spacing="7" pt="4" fontSize="larger" display={{base:"none", md:"none", lg:"flex"}}>
+            <HStack spacing="7" pt="4" pr="7rem" fontSize="larger" display={{base:"none", md:"none", lg:"flex"}}>
                 <a href="">Home</a>
                 <a href="">About</a>
                 <a href="">Products</a>
@@ -31,9 +31,8 @@ const navBar = () => {
                     <Box pt="1"><Image src={logicon} alt="cart icon" boxSize="1.5rem"/></Box>
                 </Link>
             </HStack>
-        
         </HStack>
     );
 }
 
-export default navBar;
+export default NavBar;
