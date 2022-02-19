@@ -1,7 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+### An e-commerce website built with React + Chakra UI + fakestore API.
+Some features implemented:
+1. Cart
+2. Checkout
+3. Login Page
+4. Product Filter Page
+5. Product details page
+6. Payment gateway(not implemented), etc.
+
+Authenticated users can view products, add them to cart in desired quantities and checkout when done.
+Please Note; Images of products may not tally with the general idea of the website. More attention is paid to logic than layout.
+
 
 Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 In the project directory, you can run:
 
