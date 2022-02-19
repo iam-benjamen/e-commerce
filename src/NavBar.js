@@ -67,7 +67,7 @@ const NavBar = () => {
           </Box>
         </ChakraLink>
 
-        <ChakraLink as= {Link} bgColor="transparent" display="flex" gap="2">
+        <ChakraLink as={Link} to="#" bgColor="transparent" display="flex" gap="2">
           <Text fontSize="2xl">Login</Text>
           <Box pt="1">
             <Image src={logicon} alt="cart icon" boxSize="1.5rem" />
