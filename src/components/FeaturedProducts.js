@@ -1,9 +1,10 @@
-import { Box, Heading, Button } from "@chakra-ui/react";
-import useFetch from "./useFetch";
+import { Box, Heading, Button, Spinner} from "@chakra-ui/react";
+import useFetch from "../useFetch";
 import SampleProduct from "./SampleProduct";
+import { Link } from "react-router-dom";
 
-const FeaturedProject = () => {
-  const { isLoading, error, data } = useFetch(
+const FeaturedProducts = () => {
+  const { isPending, error, data } = useFetch(
     "https://fakestoreapi.com/products?limit=3"
   );
   
@@ -16,7 +17,7 @@ const FeaturedProject = () => {
       alignItems="center"
     >
       <Box>
-        <Heading color="#102A42" fontSize="2.5rem" lineHeight="1">
+        <Heading color="#102A42" fontSize={["2rem","2rem","2.5rem"]} lineHeight="1">
           Featured Products
         </Heading>
         <Box
@@ -28,13 +29,13 @@ const FeaturedProject = () => {
         ></Box>
       </Box>
       <Box display="flex" gap="1rem">
-        {error && <div>{error}</div>}
-        {isLoading && <div>Loading...</div>}
+        {error && <Box fontSize="2xl" my="10rem">Could not fetch products! <br/>Please check your connection :(</Box>}
+        {isPending && <Spinner size="xl" my="10rem"/>}
         {data && <div><SampleProduct items = {data}/></div>}
       </Box>
-      <Button bgColor="#ab7a5f" color="white">Load more</Button>
+      <Button as={Link} to="/products" bgColor="#ab7a5f" color="white">Load more</Button>
     </Box>
   );
 };
 
-export default FeaturedProject;
+export default FeaturedProducts;

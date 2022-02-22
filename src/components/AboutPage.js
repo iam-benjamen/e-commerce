@@ -1,5 +1,5 @@
 import { Box, Text, Heading, Image } from "@chakra-ui/react";
-import herobg from "./asset/herobg.jpeg";
+import herobg from "../asset/herobg.jpeg";
 import { Link } from "react-router-dom";
 
 const AboutPage = () => {

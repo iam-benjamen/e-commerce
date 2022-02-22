@@ -6,10 +6,10 @@ import {
   Circle,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-import mainlogo from "./asset/mainlogo.svg";
-import carticon from "./asset/carticon.svg";
-import logicon from "./asset/logicon.svg";
-import triplebar from "./asset/triplebar.svg";
+import mainlogo from "../asset/mainlogo.svg";
+import carticon from "../asset/carticon.svg";
+import logicon from "../asset/logicon.svg";
+import triplebar from "../asset/triplebar.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,7 @@ const NavBar = () => {
       >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <a href="#">Products</a>
+        <Link to="/products">Products</Link>
       </HStack>
       <HStack gap="2" display={{ base: "none", md: "none", lg: "flex" }}>
         <ChakraLink

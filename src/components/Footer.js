@@ -6,7 +6,7 @@ const Footer = () => {
             flexDirection={{base:"column", md:"row", lg:"row"}} 
             justifyContent="center" bgColor="#222222" gap="2" 
             height="5rem" alignItems="center"
-            position="static"
+            // position="fixed"
             bottom="0"
             width="100%"
         >

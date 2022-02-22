@@ -1,12 +1,13 @@
 import { Box, VStack, Heading, Text, Button, Image } from "@chakra-ui/react";
-import herobg from "./asset/herobg.jpeg";
-import herobgs from "./asset/herobg2.jpeg";
+import herobg from "../asset/herobg.jpeg";
+import herobgs from "../asset/herobg2.jpeg";
 
 const IntroSection = () => {
   return (
     <Box
       display="flex"
       flexDirection="row"
+      justifyContent="space-between"
       gap={{ md: "5rem", lg: "8rem" }}
       px={{ base: "1rem", md: "5rem", lg: "7rem" }}
       mt="5rem"

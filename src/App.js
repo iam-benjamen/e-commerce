@@ -1,12 +1,13 @@
-import NavBar from "./NavBar.js";
-import Footer from "./Footer.js";
-import IntroSection from "./IntroSection.js";
-import BriefSection from "./BriefSection.js";
-import FormSection from "./FormSection.js";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import IntroSection from "./components/IntroSection";
+import BriefSection from "./components/BriefSection";
+import FormSection from "./components/FormSection";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import FeaturedProject from "./FeaturedProducts.js";
+import FeaturedProducts from "./components/FeaturedProducts";
+import AboutPage from "./components/AboutPage";
+import ProductDetail from "./components/ProductDetail";
 
-import AboutPage from "./AboutPage";
 function App() {
   return (
     <Router>
@@ -15,12 +16,15 @@ function App() {
         <Switch>
           <Route exact path="/">
             <IntroSection />
-            <FeaturedProject />
+            <FeaturedProducts />
             <BriefSection />
             <FormSection />
           </Route>
           <Route path="/about">
             <AboutPage />
+          </Route>
+          <Route path="/products/:id">
+            <ProductDetail />
           </Route>
         </Switch>
       </div>

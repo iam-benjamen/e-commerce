@@ -1,7 +1,7 @@
 import { Box, Heading, Text, Circle, Image } from "@chakra-ui/react";
-import icon1 from "./asset/icon1.svg";
-import icon2 from "./asset/icon2.svg";
-import icon3 from "./asset/icon3.svg";
+import icon1 from "../asset/icon1.svg";
+import icon2 from "../asset/icon2.svg";
+import icon3 from "../asset/icon3.svg";
 
 const BriefSection = () => {
   return (
