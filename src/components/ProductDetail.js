@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Button, Spinner } from "@chakra-ui/react";
+import { Box, Heading,Button, Spinner } from "@chakra-ui/react";
 import { Link, useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 import ProductFormat from "./ProductFormat";
@@ -19,7 +19,7 @@ const ProductDetail = () => {
         alignItems="center"
         fontSize={["1rem", "1.5rem", "2rem"]}
         gap={["0.3rem", "0.5rem", "1rem"]}
-        pl="2rem"
+        pl="5rem"
       >
         <Link to="/" color="#795744" cursor="pointer">
           Home /
@@ -27,11 +27,11 @@ const ProductDetail = () => {
         <Link to="/products" color="#795744">
           Products /
         </Link>
-        <Text color="#453227">
+        <Box color="#453227">
           {error && "..."}
           {isPending && <Spinner size="sm"/>}
           {data && data.title}
-        </Text>
+        </Box>
       </Heading>
       <Button
         as={Link}
@@ -40,7 +40,7 @@ const ProductDetail = () => {
         bgColor="#ab7a5f"
         cursor="pointer"
         mt="5rem"
-        ml="2rem"
+        ml="5rem"
       >
         Back to Products
       </Button>
@@ -51,7 +51,7 @@ const ProductDetail = () => {
             <br /> Please check your connection:(
           </Box>
         )}
-        {isPending && <Spinner size="xl" />}
+        {isPending && <Spinner size="xl" my="10rem" mx="40%"/>}
         {data && <ProductFormat product={data} />}
       </Box>
     </Box>

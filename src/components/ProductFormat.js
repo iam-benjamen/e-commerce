@@ -12,45 +12,52 @@ const productFormat = (props) => {
     "https://dl.airtable.com/.attachments/946256810a22dc7cb0ecad4e3e2faac4/1d3cd5e7/extra-4.jpeg",
   ];
   return (
-    <Box display="flex">
-      <Box display="flex" flexDirection="column" objectFit="cover">
+    <Box display="flex" py="4rem" gap="2rem">
+      <Box display="flex" flexDirection="column" pl="5rem" justifyContent="center" gap="2rem" width="50rem">
         <Box>
-          <Image height="600px" src={activeImage} />
+          <Image height="600px" src={activeImage}  ml = "auto" borderRadius=".5rem"/>
         </Box>
-        <Box display="flex" width="100%" justifyContent="space-between">
+        <Box display="flex" width="100%" justifyContent="center" gap=".5rem" cursor="pointer" borderRadius="0.25rem">
           <Image
             height="75px"
             width="5rem"
             src={imageLinks[0]}
             onClick={(e) => setActiveImage(e.target.src)}
+            borderRadius=".25rem"
+            outline="1px solid"
           />
           <Image
             height="75px"
             src={imageLinks[1]}
             onClick={(e) => setActiveImage(e.target.src)}
+            borderRadius=".25rem"
           />
           <Image
             height="75px"
             src={imageLinks[2]}
             onClick={(e) => setActiveImage(e.target.src)}
+            borderRadius=".25rem"
           />
           <Image
             height="75px"
             src={imageLinks[3]}
             onClick={(e) => setActiveImage(e.target.src)}
+            borderRadius=".25rem"
           />
           <Image
             height="75px"
             src={imageLinks[4]}
             onClick={(e) => setActiveImage(e.target.src)}
+            borderRadius=".25rem"
           />
         </Box>
       </Box>
-      <Box display="flex" flexDirection="column">
+      <Box display="flex" flexDirection="column" px="2rem" gap="1rem" justifyContent="center">
         <Heading
           fontSize={["1rem", "1.5", "2rem"]}
           textTransform="capitalize"
           color="#102A42"
+          lineHeight="1.5"
         >
           {product.title}
         </Heading>
@@ -58,8 +65,9 @@ const productFormat = (props) => {
         <Text lineHeight="2" color="#324d67" maxWidth="45em">
           {product.description}
         </Text>
-        <Text>{`Category: ${product.category}`}</Text>
-        <Text>Available: In Stock</Text>
+        <Text fontWeight="700">{`Category: ${product.category}`}</Text>
+        <Text fontWeight="700">Available: In Stock</Text>
+        <hr color="gray.200"/>
       </Box>
     </Box>
   );
