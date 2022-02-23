@@ -1,7 +1,9 @@
-import { Box, Image, Heading, Text } from "@chakra-ui/react";
+import { Box, Image, Heading, Text, Button, Flex } from "@chakra-ui/react";
 import { useState } from "react";
+import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
 const productFormat = (props) => {
+  const [orderNum, setOrderNum] = useState(1);
   const product = props.product;
   const [activeImage, setActiveImage] = useState(product.image);
   const imageLinks = [
@@ -11,13 +13,33 @@ const productFormat = (props) => {
     "https://dl.airtable.com/.attachments/a2848c44d624f22e092426d0f85e45a8/e5c860b5/extra-3.jpeg",
     "https://dl.airtable.com/.attachments/946256810a22dc7cb0ecad4e3e2faac4/1d3cd5e7/extra-4.jpeg",
   ];
+
   return (
-    <Box display="flex" py="4rem" gap="2rem">
-      <Box display="flex" flexDirection="column" pl="5rem" justifyContent="center" gap="2rem" width="50rem">
+    <Box display="flex" flexDirection={["column","column", "row"]} py="4rem" gap="2rem">
+      <Box
+        display="flex"
+        flexDirection="column"
+        pl="5rem"
+        justifyContent="center"
+        gap="2rem"
+        width="50rem"
+      >
         <Box>
-          <Image height="600px" src={activeImage}  ml = "auto" borderRadius=".5rem"/>
+          <Image
+            height="600px"
+            src={activeImage}
+            ml="auto"
+            borderRadius=".5rem"
+          />
         </Box>
-        <Box display="flex" width="100%" justifyContent="center" gap=".5rem" cursor="pointer" borderRadius="0.25rem">
+        <Box
+          display="flex"
+          width="100%"
+          justifyContent="center"
+          gap=".5rem"
+          cursor="pointer"
+          borderRadius="0.25rem"
+        >
           <Image
             height="75px"
             width="5rem"
@@ -52,7 +74,13 @@ const productFormat = (props) => {
           />
         </Box>
       </Box>
-      <Box display="flex" flexDirection="column" px="2rem" gap="1rem" justifyContent="center">
+      <Box
+        display="flex"
+        flexDirection="column"
+        px="2rem"
+        gap="1rem"
+        justifyContent="center"
+      >
         <Heading
           fontSize={["1rem", "1.5", "2rem"]}
           textTransform="capitalize"
@@ -67,7 +95,25 @@ const productFormat = (props) => {
         </Text>
         <Text fontWeight="700">{`Category: ${product.category}`}</Text>
         <Text fontWeight="700">Available: In Stock</Text>
-        <hr color="gray.200"/>
+        <hr color="gray.200" />
+        <Box>
+          <Flex gap="2rem">
+            <AddIcon
+              onClick={() => setOrderNum(orderNum + 1)}
+              bgColor="transparent"
+              cursor="pointer"
+              alignSelf="center"
+            />
+            <Text fontSize="2xl" fontWeight="bold">{orderNum}</Text>
+            <MinusIcon
+              onClick={() => setOrderNum(orderNum - 1)}
+              bgColor="transparent"
+              cursor="pointer"
+              alignSelf="center"
+            />
+          </Flex>
+          <Button color="white" bgColor="#ab7a5f" mt="1rem">ADD TO CART</Button>
+        </Box>
       </Box>
     </Box>
   );

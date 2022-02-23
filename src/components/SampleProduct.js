@@ -21,9 +21,8 @@ const SampleProduct = (props) => {
             width="100%"
             borderRadius="0.5rem"
             src={item.image}
-            // outline="5px solid"
             cursor="pointer"
-            transitionDuration="0.5s"
+            transitionDuration="0.15s"
             _hover={{boxShadow:"-4px 0px 7px 3px rgb(0 0 0 / 31%)"}}
           />
           <Box

@@ -14,7 +14,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [ordernum] = useState(0);
+  const [cartNum] = useState(0);
 
   return (
     <HStack
@@ -62,7 +62,7 @@ const NavBar = () => {
               bottom="4"
               left="3"
             >
-              {ordernum}
+              {cartNum}
             </Circle>
           </Box>
         </ChakraLink>

@@ -50,7 +50,7 @@ const ProductDetail = () => {
             There was an error!
             <br /> Please check your connection:(
           </Box>
-        )}
+        )} 
         {isPending && <Spinner size="xl" my="10rem" mx="40%"/>}
         {data && <ProductFormat product={data} />}
       </Box>

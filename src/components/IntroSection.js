@@ -28,7 +28,7 @@ const IntroSection = () => {
           aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis
           alias?
         </Text>
-        <Button bgColor="#ab7a5f">
+        <Button bgColor="#ab7a5f" _hover={{scale:1.4}}>
           <Text color="white" fontSize="0.8rem">
             SHOP NOW
           </Text>
