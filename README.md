@@ -14,6 +14,8 @@ Please Note; Images of products may not tally with the general idea of the websi
 Below you will find some information on how to perform common tasks.<br>
 
 In the project directory, you can run:
+![Screenshot from 2022-02-23 18-07-34](https://user-images.githubusercontent.com/88411228/155370397-d287df27-8fe3-4aad-89f0-0ba9b5f5a581.png)
+![Screenshot from 2022-02-23 18-07-06](https://user-images.githubusercontent.com/88411228/155370484-144fe0a6-d6bb-465a-9141-35e7d7ba92b4.png)
 
 ### `npm start`
 
