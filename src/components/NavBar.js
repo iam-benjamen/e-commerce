@@ -47,7 +47,7 @@ const NavBar = () => {
       <HStack gap="2" display={{ base: "none", md: "none", lg: "flex" }}>
         <ChakraLink
           as={Link}
-          to="#"
+          to="/cart"
           bgColor="transparent"
           display="inline-flex"
         >

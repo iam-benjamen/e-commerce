@@ -1,6 +1,7 @@
 import { Box, Image, Heading, Text, Button, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const productFormat = (props) => {
   const [orderNum, setOrderNum] = useState(1);
@@ -13,16 +14,28 @@ const productFormat = (props) => {
     "https://dl.airtable.com/.attachments/a2848c44d624f22e092426d0f85e45a8/e5c860b5/extra-3.jpeg",
     "https://dl.airtable.com/.attachments/946256810a22dc7cb0ecad4e3e2faac4/1d3cd5e7/extra-4.jpeg",
   ];
+  
+  const handleClickMinus = () => {
+    if (orderNum > 1) {
+      setOrderNum(orderNum - 1);
+    }
+  };
+
 
   return (
-    <Box display="flex" flexDirection={["column","column", "row"]} py="4rem" gap="2rem">
+    <Box
+      display="flex"
+      flexDirection={["column", "column", "row"]}
+      py="4rem"
+      gap="2rem"
+    >
       <Box
         display="flex"
         flexDirection="column"
         pl="5rem"
         justifyContent="center"
         gap="2rem"
-        width="50rem"
+        width={["80%", "80%", "50rem"]}
       >
         <Box>
           <Image
@@ -98,21 +111,25 @@ const productFormat = (props) => {
         <hr color="gray.200" />
         <Box>
           <Flex gap="2rem">
+            <MinusIcon
+              onClick={handleClickMinus}
+              bgColor="transparent"
+              cursor="pointer"
+              alignSelf="center"
+            />
+            <Text fontSize="2xl" fontWeight="bold">
+              {orderNum}
+            </Text>
             <AddIcon
               onClick={() => setOrderNum(orderNum + 1)}
               bgColor="transparent"
               cursor="pointer"
               alignSelf="center"
             />
-            <Text fontSize="2xl" fontWeight="bold">{orderNum}</Text>
-            <MinusIcon
-              onClick={() => setOrderNum(orderNum - 1)}
-              bgColor="transparent"
-              cursor="pointer"
-              alignSelf="center"
-            />
           </Flex>
-          <Button color="white" bgColor="#ab7a5f" mt="1rem">ADD TO CART</Button>
+          <Button as={Link} to="/cart" color="white" bgColor="#ab7a5f" mt="1rem">
+            ADD TO CART
+          </Button>
         </Box>
       </Box>
     </Box>

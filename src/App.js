@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FeaturedProducts from "./components/FeaturedProducts";
 import AboutPage from "./components/AboutPage";
 import ProductDetail from "./components/ProductDetail";
+import CartPage from "./components/CartPage";
+import ProductFilter from "./components/ProductFilter";
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
           </Route>
           <Route path="/about">
             <AboutPage />
+          </Route>
+          <Route exact path="/products">
+            <ProductFilter />
+          </Route>
+          <Route path="/cart">
+            <CartPage />
           </Route>
           <Route path="/products/:id">
             <ProductDetail />

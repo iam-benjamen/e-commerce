@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 import ProductFormat from "./ProductFormat";
 
+
 const ProductDetail = () => {
   const { id } = useParams();
   const { isPending, error, data } = useFetch(
@@ -17,7 +18,7 @@ const ProductDetail = () => {
         display="flex"
         minHeight="20vh"
         alignItems="center"
-        fontSize={["1rem", "1.5rem", "2rem"]}
+        fontSize={["1rem", "1rem", "1.5rem"]}
         gap={["0.3rem", "0.5rem", "1rem"]}
         pl="5rem"
       >

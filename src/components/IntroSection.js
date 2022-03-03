@@ -1,6 +1,7 @@
 import { Box, VStack, Heading, Text, Button, Image } from "@chakra-ui/react";
 import herobg from "../asset/herobg.jpeg";
 import herobgs from "../asset/herobg2.jpeg";
+import { Link } from "react-router-dom";
 
 const IntroSection = () => {
   return (
@@ -28,7 +29,7 @@ const IntroSection = () => {
           aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis
           alias?
         </Text>
-        <Button bgColor="#ab7a5f" _hover={{scale:1.4}}>
+        <Button bgColor="#ab7a5f" as={Link} to="/products">
           <Text color="white" fontSize="0.8rem">
             SHOP NOW
           </Text>
