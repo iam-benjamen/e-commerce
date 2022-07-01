@@ -1,9 +1,33 @@
 import { Box, Image, Text, Heading, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
+import { useState } from "react";
 const Productie = (props) => {
   const products = props.products;
+
+  const options = [
+    {
+      name: "Price(Lowest)",
+      value: "lowest",
+    },
+    {
+      name: "Price(Highest)",
+      value: "highest",
+    },
+    {
+      name: "Name(A-Z)",
+      value: "az",
+    },
+    {
+      name: "Name(Z-A)",
+      value: "za",
+    },
+  ];
+  const [selectedOption, setSelectedOption] = useState(options[0].value);
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   return (
     <Box>
@@ -20,20 +44,19 @@ const Productie = (props) => {
         <Link to="/" color="#795744" cursor="pointer">
           Home /
         </Link>
-        <Text color="#795744">
-          Products
-        </Text>
+        <Text color="#795744">Products</Text>
       </Heading>
       <HStack justifyContent="flex-end" mt="2.5" pr="10rem" gap="10rem">
         <Text>{`${products.length} Products found`}</Text>
-        <hr color="black"/>
+        <hr color="black" />
         <form>
           <label htmlFor="sort">Sort by</label>
-          <select name="sort" id="sort">
-            <option value="lowest">Price(Lowest)</option>
-            <option value="highest">Price(Highest)</option>
-            <option value="az">Name(A-Z)</option>
-            <option value="za">Name(Z-A)</option>
+          <select value={selectedOption} onChange={handleChange}>
+            {options.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.name}
+              </option>
+            ))}
           </select>
         </form>
       </HStack>
