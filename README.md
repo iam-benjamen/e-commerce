@@ -5,7 +5,7 @@ Some features implemented:
 3. Login Page
 4. Product Filter Page
 5. Product details page
-6. Payment gateway(not implemented), etc.
+
 
 Authenticated users can view products, add them to cart in desired quantities and checkout when done.
 Please Note; Images of products may not tally with the general idea of the website. More attention is paid to logic than layout.
